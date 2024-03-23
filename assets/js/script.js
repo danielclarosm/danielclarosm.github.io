@@ -61,6 +61,7 @@ const scrollUp = () => {
 }
 
 document.addEventListener('scroll', scrollUp)
+<<<<<<< HEAD
 
 /* Script para cambiar idioma de la web */
 document.getElementById('language-link').addEventListener('click', function (event) {
@@ -80,3 +81,5 @@ document.getElementById('language-link').addEventListener('click', function (eve
 		window.location.href = '/en';
 	}
 });
+=======
+>>>>>>> origin

@@ -58,6 +58,29 @@
             <button type="button" aria-label="toggle navigation" class="btn btn--icon nav__hamburger">
                 <i aria-hidden="true" class="fas fa-bars"></i>
             </button>
+<<<<<<< HEAD
+=======
+
+            <script>
+                document.getElementById('language-link').addEventListener('click', function (event) {
+                    // Evita que el enlace funcione como un enlace normal
+                    event.preventDefault();
+
+                    // Obtiene la URL de la carpeta de idioma
+                    var languageUrl = this.getAttribute('href');
+
+                    // Verifica si la URL actual es la versión en inglés (/en)
+                    if (window.location.pathname === '/en/') {
+                        // Si estamos en la versión en inglés, redirigir a la página principal en español
+                        window.location.href = '/';
+                    } else if (!window.location.pathname.startsWith('/en')) {
+                        // Si no estamos en la versión en inglés y no hemos añadido ya /en a la URL,
+                        // redirigir a la versión en inglés
+                        window.location.href = '/en';
+                    }
+                });
+            </script>
+>>>>>>> origin
         </nav>
     </header>
 
