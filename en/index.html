@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Configuración del viewport para un diseño responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" , shrink-to-fit=yes>
+    <!-- Palabras clave para SEO -->
+    <meta name="keywords" content="data science, machine learning, data analysis, power bi, dashboard">
+    <!-- Descripción de la página para SEO -->
+    <meta name="description" content="Daniel Esteven Claros Montero, ML | AI | Python | R | SQL | Power BI">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon-512x512.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="/assets/css/styles.css">
+
+    <!-- Page CSS -->
+
+    <title>Daniel Claros</title>
+</head>
+
+<body class="light index-body" id="top">
+    <header class="header center">
+        <h3>
+            <a href="https://danielclarosm.github.io/" class="link">DC.</a>
+        </h3>
+
+        <nav class="nav center">
+            <ul class="nav__list center">
+                <li class="nav__list-item">
+                    <a class="link link--nav" href="#projects.html">Projects</a>
+                </li>
+                <li class="nav__list-item">
+                    <a class="link link--nav" href="#contact.html">Contact</a>
+                </li>
+            </ul>
+
+            <button type="button" aria-label="toggle language" class="btn btn--icon" style="padding-right: 1em;">
+                <a href="en" id="language-link">
+                    <i aria-hidden="true" id="btn-language" class="fas fa-language"></i>
+                </a>
+            </button>
+
+            <button type="button" aria-label="toggle theme" class="btn btn--icon">
+                <i aria-hidden="true" id="btn-theme" class="fas fa-moon"></i>
+            </button>
+
+            <button type="button" aria-label="toggle navigation" class="btn btn--icon nav__hamburger">
+                <i aria-hidden="true" class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- About -->
+        <div class="about center">
+            <h1><span id="typed"></span></h1>
+            <!-- <h1>Hi, I am <span class="about__name">Daniel Claros.</span></h1> -->
+            <!-- <h2 class="about__role">BEng. Electrical Engineering </h2> -->
+            <p class="about__desc">
+                Electrical Engineering student at the University of Engineering and Technology, UTEC. Interested in
+                projects in <b>data science</b> and <b>information technology (IT)</b>. Possessing knowledge in data
+                analysis and
+                skills in installing network devices. Committed to continuous learning and the development of digital
+                competencies. Seeking opportunities to apply my skills in a practical environment and contribute to the
+                success of innovative projects.
+            </p>
+
+            <div class="about__contact center">
+                <a href="https://acrobat.adobe.com/id/urn:aaid:sc:US:ebe03ad1-ae75-4dbc-84bf-d46f7252b3db">
+                    <span class="btn btn--outline">Resume</span>
+                </a>
+
+                <a href="mailto:danielclarosm28@gmail.com" aria-label="envelope" class="link link--icon">
+                    <i aria-hidden="true" class="fas fa-envelope"></i>
+                </a>
+
+                <a href="https://github.com/danielclarosm" aria-label="github" class="link link--icon">
+                    <i aria-hidden="true" class="fab fa-github"></i>
+                </a>
+
+                <a href="https://linkedin.com/in/danielclarosm" aria-label="linkedin" class="link link--icon">
+                    <i aria-hidden="true" class="fab fa-linkedin"></i>
+                </a>
+            </div>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    var typedText = "Hi, I am <span class='about__name'>Daniel Claros.</span>"; // Texto a escribir
+                    typedText = typedText.replace(/\|/g, ''); // Elimina todas las ocurrencias de "|" en el texto
+                    var typed = new Typed('#typed', {
+                        strings: [typedText],
+                        typeSpeed: 50, // Velocidad de escritura (milisegundos por carácter)
+                        backSpeed: 50, // Velocidad de borrado (milisegundos por carácter)
+                        startDelay: 1000, // Retraso antes de iniciar la escritura (en milisegundos)
+                        backDelay: 1000, // Retraso antes de iniciar el borrado (en milisegundos)
+                        loop: false, // Repetir la animación
+                        showCursor: true // Desactiva la visualización del cursor
+                    });
+                });
+            </script>
+
+            <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <a href="https://github.com/danielclarosm" class="link footer__link">© Copyright 2024 Daniel Claros. All rights
+            reserved.</a>
+    </footer>
+
+    <div class="scroll-container">
+        <div class="scroll-top">
+            <a aria-label="Scroll up" href="#top">
+                <i aria-hidden="true" class="fas fa-arrow-up"></i>
+            </a>
+        </div>
+    </div>
+
+    <script src="/assets/js/script.js"></script>
+</body>
+
+</html>
