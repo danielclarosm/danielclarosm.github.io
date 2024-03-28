@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Configuración del viewport para un diseño responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" , shrink-to-fit=yes>
+    <!-- Palabras clave para SEO -->
+    <meta name="keywords" content="data science, machine learning, data analysis, power bi, dashboard">
+    <!-- Descripción de la página para SEO -->
+    <meta name="description" content="Daniel Esteven Claros Montero, ML | AI | Python | R | SQL | Power BI">
+    <meta name="author" content="Daniel Claros">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon-512x512.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- Icons. Uncomment required icon fonts -->
+    <link
+        href="https://cdn.jsdelivr.net/gh/eliyantosarage/font-awesome-pro@main/fontawesome-pro-6.5.1-web/css/all.min.css"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="/assets/css/styles.css">
+
+    <!-- Page CSS -->
+    <style>
+        .contenedor {
+            display: -ms-flex;
+            display: -webkit-flex;
+            display: flex;
+        }
+
+        .contenedor>div {
+            width: 50%;
+            padding: 10px;
+        }
+
+        .flexbox-container>div:first-child {
+            margin-right: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .input-container {
+            width: 650px;
+            max-width: 100%;
+            margin: 20px auto 25px auto;
+        }
+    </style>
+
+    <title>Daniel Claros</title>
+</head>
+
+<body class="body-light">
+    <div id="page-container">
+        <div id="content-wrap">
+            <header class="header center" id="top">
+                <h3><a href="https://danielclarosm.github.io/" class="link">DC.</a></h3>
+                <nav class="nav center">
+                    <ul class="nav__list center">
+                        <li class="nav__list-item">
+                            <a class="link link--nav" href="#proyectos.html">Proyectos</a>
+                        </li>
+                        <li class="nav__list-item">
+                            <a class="link link--nav" href="contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                    <button type="button" aria-label="toggle language" class="btn btn--icon"
+                        style="padding-right: 1em;">
+                        <a href="en/contact" id="language-link">
+                            <i aria-hidden="true" id="btn-language" class="fas fa-language"></i>
+                        </a>
+                    </button>
+                    <button type="button" aria-label="toggle theme" class="btn btn--icon">
+                        <i aria-hidden="true" id="btn-theme" class="fas fa-moon"></i>
+                    </button>
+                    <button type="button" aria-label="toggle navigation" class="btn btn--icon nav__hamburger">
+                        <i aria-hidden="true" class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </header>
+            <main>
+                <div class="row input-container animated fadeIn" style="width:100vw;animation-duration: 1.5s;">
+                    <div class="col0" id="hero-left">
+                        <h1 class="">Pongámonos en contacto.</h1>
+                        <p class="">¿Quieres discutir un proyecto, una idea, una
+                            oportunidad? Sólo llena este formulario o escríbeme un correo electrónico <a target="_blank"
+                                href="mailto:danielclarosm28@gmail.com"><i class="fas fa-envelope"></i></a>
+                        </p>
+                        <form name="submit-to-google-sheet">
+                            <div class="form-group">
+                                <label for="name">Nombre</label>
+                                <input type="text" id="name" name="name" autocomplete="off" class="form-control"
+                                    oninvalid="setCustomValidity('Por favor, escriba su nombre')"
+                                    oninput="this.setCustomValidity('')" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo electrónico</label>
+                                <input type="email" id="email" name="email" autocomplete="off" id="email"
+                                    class="form-control"
+                                    oninvalid="setCustomValidity('Por favor, introduce una dirección de correo electrónico válida')"
+                                    oninput="this.setCustomValidity('')" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Tu mensaje</label>
+                                <textarea rows="3" id="message" name="message" autocomplete="off" class="form-control"
+                                    oninvalid="setCustomValidity('Por favor introduce un mensaje')"
+                                    oninput="this.setCustomValidity('')" required></textarea>
+                            </div>
+                            <button type="submit" class="submit animated bounce delay-1s btn btn--outline">
+                                Enviar mensaje
+                            </button>
+                            <spa id="msg"></spa>
+                        </form>
+                        <script>
+                            const scriptURL = 'https://script.google.com/macros/s/AKfycbyH6JSM6UEPXRQ7PNL53EjNrjoLnIAGDKFPf7bHqjv_TSjfaQVbz8MLjlvrJXINOGA2zQ/exec'
+                            const form = document.forms['submit-to-google-sheet']
+                            const msg = document.getElementById('msg')
+
+                            form.addEventListener('submit', e => {
+                                e.preventDefault()
+                                alert('¡Tu mensaje ha sido enviado exitosamente!')
+                                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                    .then(response => {
+                                        msg.innerHTML = '<div class="position-relative"><div class="position-absolute top-0 start-0 translate-middle"><div class="alert alert-success" role="alert"><h2 class="alert-heading">¡Gracias por tu mensaje!</h2><p>¡Me pondré en contacto contigo lo antes posible para discutir más sobre lo que necesitas!</p><hr><p class="mb-0">Mientras tanto, ¿por qué no echas un vistazo a mis proyectos? ¡Estoy emocionado de mostrarte lo que he estado trabajando!</p></div></div></div>'
+                                        setTimeout(function () {
+                                            msg.innerHTML = ""
+
+                                        }, 10000)
+                                        form.reset()
+                                    })
+                                    .catch(error => console.error('Error!', error.message))
+                            })
+                        </script>
+                    </div>
+                    <!-- <div class="col1" id="hero-right">
+                        <img class="animated fadeInRight" id="hero-img" src="assets/img/contact.png" alt="IMG">
+                    </div> -->
+                </div>
+            </main>
+        </div>
+        <footer class="footer" id="footer">
+            <a href="https://github.com/danielclarosm" class="link footer__link">© Copyright 2024 Daniel Claros. Todos
+                los derechos reservados.</a>
+        </footer>
+    </div>
+    <div class="scroll-container">
+        <div class="scroll-top">
+            <a aria-label="Scroll up" href="#top">
+                <i aria-hidden="true" class="fas fa-arrow-up"></i>
+            </a>
+        </div>
+    </div>
+    <script src="/assets/js/script.js"></script>
+</body>
+
+</html>
