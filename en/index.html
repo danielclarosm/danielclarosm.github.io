@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <!-- Configuración del viewport para un diseño responsive -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" , shrink-to-fit=yes>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 , shrink-to-fit=yes">
     <!-- Palabras clave para SEO -->
     <meta name="keywords" content="data science, machine learning, data analysis, power bi, dashboard">
     <!-- Descripción de la página para SEO -->
@@ -36,68 +36,71 @@
 </head>
 
 <body class="body-light">
+
     <div id="page-container">
         <div id="content-wrap">
-            <header class="header center" id="top">
+
+            <header id="top" class="center">
                 <h3><a href="https://danielclarosm.github.io/" class="link">DC.</a></h3>
-                <nav class="nav center">
-                    <ul class="nav__list center">
-                        <li class="nav__list-item">
-                            <a class="link link--nav" href="#projects.html">Projects</a>
+                <nav class="menu center">
+                    <ul class="menu-list center">
+                        <li class="menu-item">
+                            <a class="link link-custom-nav" href="#projects.html">Projects</a>
                         </li>
-                        <li class="nav__list-item">
-                            <a class="link link--nav" href="#education.html">Education</a>
+                        <li class="menu-item">
+                            <a class="link link-custom-nav" href="#education.html">Education</a>
                         </li>
-                        <li class="nav__list-item">
-                            <a class="link link--nav" href="#contact.html">Contact</a>
+                        <li class="menu-item">
+                            <a class="link link-custom-nav" href="contact.html">Contact</a>
                         </li>
                     </ul>
-                    <button type="button" aria-label="toggle language" class="btn btn--icon"
-                        style="padding-right: 1em;">
-                        <a href="/" id="language-link">
-                            <i aria-hidden="true" id="btn-language" class="fas fa-language"></i>
-                        </a>
-                    </button>
-                    <button type="button" aria-label="toggle theme" class="btn btn--icon">
-                        <i aria-hidden="true" id="btn-theme" class="fas fa-moon"></i>
-                    </button>
-                    <button type="button" aria-label="toggle navigation" class="btn btn--icon nav__hamburger">
-                        <i aria-hidden="true" class="fas fa-bars"></i>
-                    </button>
+                    <button type="button" class="btn btn-icon" id="language-toggle" style="padding-right: 1em;">
+                        <i class="fas fa-language" aria-hidden="true"></i></button>
+                    <button type="button" class="btn btn-icon">
+                        <i class="fas fa-moon" aria-hidden="true"></i></button>
+                    <button type="button" class="btn btn-icon hamburger">
+                        <i class="fas fa-bars" aria-hidden="true"></i></button>
                 </nav>
             </header>
+
             <main>
-                <!-- About -->
-                <div class="about center">
+                <div class="hero center">
                     <h1><span id="typed"></span></h1>
-                    <!-- <h1>Hola, soy <span class="about__name">Daniel Claros.</span></h1> -->
-                    <!-- <h2 class="about__role">BEng. Electrical Engineering</h2> -->
-                    <p class="about__desc">
+                    <!-- <h1>Hola, soy <span class="hero-name">Daniel Claros.</span></h1> -->
+                    <!-- <h2 class="hero-role">BEng. Electrical Engineering</h2> -->
+                    <p class="hero-about">
                         Electrical Engineering student at the University of Engineering and Technology, UTEC. Interested
                         in projects in <b>data science</b> and <b>information technology (IT)</b>. Possessing knowledge
                         in data analysis and skills in installing network devices. Committed to continuous learning and
                         the development of digital competencies. Seeking opportunities to apply my skills in a practical
-                        environment and contribute to the success of innovative projects.</p>
-                    <div class="about__contact center">
-                        <a href="https://acrobat.adobe.com/id/urn:aaid:sc:US:ebe03ad1-ae75-4dbc-84bf-d46f7252b3db">
-                            <span class="btn btn--outline">Resume</span>
+                        environment and contribute to the success of innovative projects.
+                    </p>
+                    <div class="hero-contact center">
+                        <a href="">
+                            <span class="btn btn--outline" onclick="openPDF()">Resumen</span>
+                        </a>
+                        <a href="mailto:danielclarosm28@gmail.com" target="_blank" rel="noopener noreferrer"
+                            class="link link-custom">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/danielclarosm" target="_blank" rel="noopener noreferrer"
+                            class="link link-custom">
+                            <i class="fab fa-github" aria-hidden="true"></i>
                         </a>
 
-                        <a href="mailto:danielclarosm28@gmail.com" aria-label="envelope" class="link link--icon">
-                            <i aria-hidden="true" class="fas fa-envelope"></i>
+                        <a href="https://linkedin.com/in/danielclarosm" target="_blank" rel="noopener noreferrer"
+                            class="link link-custom">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
                         </a>
-
-                        <a href="https://github.com/danielclarosm" aria-label="github" class="link link--icon">
-                            <i aria-hidden="true" class="fab fa-github"></i>
-                        </a>
-
-                        <a href="https://linkedin.com/in/danielclarosm" aria-label="linkedin" class="link link--icon">
-                            <i aria-hidden="true" class="fab fa-linkedin"></i>
-                        </a>
+                        <script>
+                            function openPDF() {
+                                window.open('/docs/CV_Daniel_Claros.pdf', '_blank');
+                            }
+                        </script>
                     </div>
                     <script>
                         document.addEventListener("DOMContentLoaded", function () {
-                            var typedText = "Hi, I am <span class='about__name'>Daniel Claros.</span>"; // Texto a escribir
+                            var typedText = "Hi, I am <span class='hero-name'>Daniel Claros.</span>"; // Texto a escribir
                             typedText = typedText.replace(/\|/g, ''); // Elimina todas las ocurrencias de "|" en el texto
                             var typed = new Typed('#typed', {
                                 strings: [typedText],
@@ -113,21 +116,31 @@
                     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
                 </div>
             </main>
-        </div>
-        <footer class="footer" id="footer">
-            <a href="https://github.com/danielclarosm" class="link footer__link">© Copyright 2024 Daniel Claros. All
-                rights
-                reserved.</a>
+
+        </div> <!-- Cierre de content-wrap -->
+
+        <footer>
+            <div>
+                <a href="https://github.com/danielclarosm" class="link footer__link">© Copyright 2024 Daniel Claros. 
+                    All rights reserved.</a>
+            </div>
+            <div class="legal">
+                <a href="legal.html">legal</a>
+            </div>
         </footer>
-    </div>
+
+    </div> <!-- Cierre de page-container -->
+
     <div class="scroll-container">
         <div class="scroll-top">
-            <a aria-label="Scroll up" href="#top">
-                <i aria-hidden="true" class="fas fa-arrow-up"></i>
+            <a href="#top" aria-label="Scroll up">
+                <i class="fas fa-arrow-up" aria-hidden="true"></i>
             </a>
         </div>
     </div>
+
     <script src="/assets/js/script.js"></script>
+
 </body>
 
 </html>

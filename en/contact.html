@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -101,13 +101,13 @@
                 <nav class="menu center">
                     <ul class="menu-list center">
                         <li class="menu-item">
-                            <a class="link link-custom-nav" href="#proyectos.html">Proyectos</a>
+                            <a class="link link-custom-nav" href="#projects.html">Projects</a>
                         </li>
                         <li class="menu-item">
-                            <a class="link link-custom-nav" href="#educacion.html">Educación</a>
+                            <a class="link link-custom-nav" href="#education.html">Education</a>
                         </li>
                         <li class="menu-item">
-                            <a class="link link-custom-nav" href="contacto.html">Contacto</a>
+                            <a class="link link-custom-nav" href="contact.html">Contact</a>
                         </li>
                     </ul>
                     <button type="button" class="btn btn-icon" id="language-toggle" style="padding-right: 1em;">
@@ -122,33 +122,33 @@
             <main>
                 <div class="animated fadeIn row" style="animation-duration: 1.5s;">
                     <div id="hero-left" class="col0">
-                        <h1 class="contact-hero animated fadeInLeft">Pongámonos en contacto.</h1>
-                        <p class="contact-des animated fadeIn delay-1s">¿Quieres discutir un proyecto, una idea, una
-                            oportunidad? Sólo llena este formulario o escríbeme un correo electrónico <a target="_blank"
+                        <h1 class="contact-hero animated fadeInLeft">Let's Get In Touch.</h1>
+                        <p class="contact-des animated fadeIn delay-1s">Want to discuss a project, an idea, an
+                            opportunity? Just fill up this form or write me an email <a target="_blank"
                                 href="mailto:danielclarosm28@gmail.com"><i class="fas fa-envelope"></i></a>
                         </p>
                         <form class="input-container" name="submit-to-google-sheet">
                             <div class="form-group">
-                                <label for="name">Nombre</label>
+                                <label for="name">Name</label>
                                 <input type="text" id="name" name="name" autocomplete="off" class="form-control"
                                     oninvalid="setCustomValidity('Por favor, escriba su nombre')"
                                     oninput="this.setCustomValidity('')" required>
                             </div>
                             <div class="form-group">
-                                <label for="email">Correo electrónico</label>
+                                <label for="email">Email Address</label>
                                 <input type="email" id="email" name="email" autocomplete="off" id="email"
                                     class="form-control"
                                     oninvalid="setCustomValidity('Por favor, introduce una dirección de correo electrónico válida')"
                                     oninput="this.setCustomValidity('')" required>
                             </div>
                             <div class="form-group">
-                                <label for="message">Tu mensaje</label>
+                                <label for="message">Your Message</label>
                                 <textarea rows="3" id="message" name="message" autocomplete="off" class="form-control"
                                     oninvalid="setCustomValidity('Por favor introduce un mensaje')"
                                     oninput="this.setCustomValidity('')" required></textarea>
                             </div>
                             <button type="submit" class="submit animated bounce delay-1s btn btn--outline">
-                                Enviar mensaje
+                                Send Message
                             </button>
                             <spa id="msg"></spa>
                         </form>
@@ -162,7 +162,7 @@
                                 alert('¡Tu mensaje ha sido enviado exitosamente!')
                                 fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                                     .then(response => {
-                                        msg.innerHTML = '<div class="position-relative"><div class="position-absolute top-0 start-0 translate-middle"><div class="alert alert-success" role="alert"><h2 class="alert-heading">¡Gracias por tu mensaje!</h2><p>¡Me pondré en contacto contigo lo antes posible para discutir más sobre lo que necesitas!</p><hr><p class="mb-0">Mientras tanto, ¿por qué no echas un vistazo a mis proyectos? ¡Estoy emocionado de mostrarte lo que he estado trabajando!</p></div></div></div>'
+                                        msg.innerHTML = '<div class="position-relative"><div class="position-absolute top-0 start-0 translate-middle"><div class="alert alert-success" role="alert"><h2 class="alert-heading">Thank you for your message!</h2><p>I will get in touch with you as soon as possible to discuss further about what you need!</p><hr><p class="mb-0">In the meantime, why not take a look at my projects? I\'m excited to show you what I\'ve been working on!</p></div></div></div>'
                                         setTimeout(function () {
                                             msg.innerHTML = ""
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <!-- Configuración del viewport para un diseño responsive -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" , shrink-to-fit=yes>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 , shrink-to-fit=yes">
     <!-- Palabras clave para SEO -->
     <meta name="keywords" content="data science, machine learning, data analysis, power bi, dashboard">
     <!-- Descripción de la página para SEO -->
@@ -70,42 +70,45 @@
             width: 90%;
             margin: 0 auto;
         }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 12vw;
+            }
+        }
     </style>
 
     <title>Daniel Claros</title>
 </head>
 
 <body class="body-light">
+
     <div id="page-container">
         <div id="content-wrap">
-            <header class="header center" id="top">
+
+            <header id="top" class="center">
                 <h3><a href="https://danielclarosm.github.io/" class="link">DC.</a></h3>
-                <nav class="nav center">
-                    <ul class="nav__list center">
-                        <li class="nav__list-item">
-                            <a class="link link--nav" href="#proyectos.html">Proyectos</a>
+                <nav class="menu center">
+                    <ul class="menu-list center">
+                        <li class="menu-item">
+                            <a class="link link-custom-nav" href="#proyectos.html">Proyectos</a>
                         </li>
-                        <li class="nav__list-item">
-                            <a class="link link--nav" href="#educacion.html">Educación</a>
+                        <li class="menu-item">
+                            <a class="link link-custom-nav" href="#educacion.html">Educación</a>
                         </li>
-                        <li class="nav__list-item">
-                            <a class="link link--nav" href="contacto.html">Contacto</a>
+                        <li class="menu-item">
+                            <a class="link link-custom-nav" href="contacto.html">Contacto</a>
                         </li>
                     </ul>
-                    <button type="button" aria-label="toggle language" class="btn btn--icon"
-                        style="padding-right: 1em;">
-                        <a href="en/legal" id="language-link">
-                            <i aria-hidden="true" id="btn-language" class="fas fa-language"></i>
-                        </a>
-                    </button>
-                    <button type="button" aria-label="toggle theme" class="btn btn--icon">
-                        <i aria-hidden="true" id="btn-theme" class="fas fa-moon"></i>
-                    </button>
-                    <button type="button" aria-label="toggle navigation" class="btn btn--icon nav__hamburger">
-                        <i aria-hidden="true" class="fas fa-bars"></i>
-                    </button>
+                    <button type="button" class="btn btn-icon" id="language-toggle" style="padding-right: 1em;">
+                        <i class="fas fa-language" aria-hidden="true"></i></button>
+                    <button type="button" class="btn btn-icon">
+                        <i class="fas fa-moon" aria-hidden="true"></i></button>
+                    <button type="button" class="btn btn-icon hamburger">
+                        <i class="fas fa-bars" aria-hidden="true"></i></button>
                 </nav>
             </header>
+
             <main>
                 <div class="animated fadeIn row" style="width:100%;animation-duration: 1.5s;">
                     <div class="politica-de-privacidad" id="left-hero">
@@ -152,25 +155,35 @@
                     </div>
                 </div>
             </main>
-        </div>
-        <footer class="footer" id="footer">
-            <a href="https://github.com/danielclarosm" class="link footer__link">© Copyright 2024 Daniel Claros. Todos
-                los derechos reservados.</a>
-            <br>
-            El <a class="legal-links" href="https://github.com/rajshekhar26/cleanfolio-minimal">código fuente</a> está
-            disponible bajo <a class="legal-links" href="https://choosealicense.com/licenses/mit/">Licencia MIT</a> y 
-            se basa en la plantilla de <a class=" legal-links"
-                href="https://github.com/rajshekhar26/cleanfolio-minimal">rajshekhar26</a>.
+
+        </div> <!-- Cierre de content-wrap -->
+
+        <footer>
+            <div>
+                <a href="https://github.com/danielclarosm" class="link footer__link">© Copyright 2024 Daniel Claros.
+                    Todos los derechos reservados.</a>
+                <br>
+                El <a class="legal-links" href="https://github.com/rajshekhar26/cleanfolio-minimal">código fuente</a>
+                está
+                disponible bajo <a class="legal-links" href="https://choosealicense.com/licenses/mit/">Licencia MIT</a>
+                y
+                se basa en la plantilla de <a class=" legal-links"
+                    href="https://github.com/rajshekhar26/cleanfolio-minimal">rajshekhar26</a>.
+            </div>
         </footer>
-    </div>
+
+    </div> <!-- Cierre de page-container -->
+
     <div class="scroll-container">
         <div class="scroll-top">
-            <a aria-label="Scroll up" href="#top">
-                <i aria-hidden="true" class="fas fa-arrow-up"></i>
+            <a href="#top" aria-label="Scroll up">
+                <i class="fas fa-arrow-up" aria-hidden="true"></i>
             </a>
         </div>
     </div>
+    
     <script src="/assets/js/script.js"></script>
+    
 </body>
 
 </html>

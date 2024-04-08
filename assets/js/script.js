@@ -4,8 +4,8 @@ const btnTheme = document.querySelector('.fa-moon')
 const btnHamburger = document.querySelector('.fa-bars')
 
 const addThemeClass = (bodyClass, btnClass) => {
-  body.classList.add(bodyClass)
-  btnTheme.classList.add(btnClass)
+	body.classList.add(bodyClass)
+	btnTheme.classList.add(btnClass)
 }
 
 const getBodyTheme = localStorage.getItem('portfolio-theme')
@@ -20,7 +20,7 @@ const setTheme = (bodyClass, btnClass) => {
 	body.classList.remove(localStorage.getItem('portfolio-theme'))
 	btnTheme.classList.remove(localStorage.getItem('portfolio-btn-theme'))
 
-  addThemeClass(bodyClass, btnClass)
+	addThemeClass(bodyClass, btnClass)
 
 	localStorage.setItem('portfolio-theme', bodyClass)
 	localStorage.setItem('portfolio-btn-theme', btnClass)
@@ -32,16 +32,16 @@ const toggleTheme = () =>
 btnTheme.addEventListener('click', toggleTheme)
 
 const displayList = () => {
-	const navUl = document.querySelector('.nav__list')
+	const navUl = document.querySelector('.menu-list')
 
 	if (btnHamburger.classList.contains('fa-bars')) {
 		btnHamburger.classList.remove('fa-bars')
 		btnHamburger.classList.add('fa-times')
-		navUl.classList.add('display-nav-list')
+		navUl.classList.add('display-menu-list')
 	} else {
 		btnHamburger.classList.remove('fa-times')
 		btnHamburger.classList.add('fa-bars')
-		navUl.classList.remove('display-nav-list')
+		navUl.classList.remove('display-menu-list')
 	}
 }
 
@@ -63,20 +63,52 @@ const scrollUp = () => {
 document.addEventListener('scroll', scrollUp)
 
 /* Script para cambiar idioma de la web */
-document.getElementById('language-link').addEventListener('click', function (event) {
-	// Evita que el enlace funcione como un enlace normal
-	event.preventDefault();
+document.getElementById('language-toggle').addEventListener('click', function (event) {
+    event.preventDefault();
 
-	// Obtiene la URL de la carpeta de idioma
-	var languageUrl = this.getAttribute('href');
+    // Obtener la URL actual
+    var currentUrl = window.location.pathname;
 
-	// Verifica si la URL actual es la versión en inglés (/en)
-	if (window.location.pathname === '/en/') {
-		// Si estamos en la versión en inglés, redirigir a la página principal en español
-		window.location.href = '/';
-	} else if (!window.location.pathname.startsWith('/en')) {
-		// Si no estamos en la versión en inglés y no hemos añadido ya /en a la URL,
-		// redirigir a la versión en inglés
-		window.location.href = '/en';
-	}
+    // Verificar si la URL actual ya está en inglés
+    var isInEnglish = currentUrl.startsWith('/en/');
+
+    // Definir la URL destino basada en el estado actual
+    var targetUrl;
+    if (isInEnglish) {
+        // Si ya está en inglés, reemplazar '/en/' con '/'
+        targetUrl = currentUrl.replace('/en/', '/');
+    } else {
+        // Si no está en inglés, agregar '/en' al inicio y ajustar el nombre del archivo
+        var filename = currentUrl.substring(currentUrl.lastIndexOf('/') + 1); // Obtener solo el nombre del archivo
+        var fileMapping = {
+            'index.html': 'index.html',
+            'legal.html': 'legal.html',
+            'contacto.html': 'contact.html',
+            'proyectos.html': 'projects.html'
+        };
+
+        var fileMappingInverse = {
+            'index.html': 'index.html',
+            'legal.html': 'legal.html',
+            'contact.html': 'contacto.html',
+            'projects.html': 'proyectos.html'
+        };
+
+        // Construir la URL en inglés
+        var englishFilename = fileMapping[filename];
+        if (englishFilename) {
+            targetUrl = '/en/' + englishFilename;
+			if (targetUrl == fileMappingInverse[filename]) {
+				targetUrl = englishFilename;
+			}
+        } else {
+            // Redirigir a la página de inicio en inglés si no se encuentra una correspondencia
+            targetUrl = '/en/';
+        }
+		
+    }
+
+    // Redirigir a la nueva URL
+    window.location.href = targetUrl;
 });
+
