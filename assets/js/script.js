@@ -62,6 +62,20 @@ const scrollUp = () => {
 
 document.addEventListener('scroll', scrollUp)
 
+var fileMapping = {
+    'index.html': 'index.html',
+    'legal.html': 'legal.html',
+    'contacto.html': 'contact.html',
+    'proyectos.html': 'projects.html'
+};
+
+var fileMappingInverse = {
+    'index.html': 'index.html',
+    'legal.html': 'legal.html',
+    'contact.html': 'contacto.html',
+    'projects.html': 'proyectos.html'
+};
+
 /* Script para cambiar idioma de la web */
 document.getElementById('language-toggle').addEventListener('click', function (event) {
     event.preventDefault();
@@ -75,40 +89,32 @@ document.getElementById('language-toggle').addEventListener('click', function (e
     // Definir la URL destino basada en el estado actual
     var targetUrl;
     if (isInEnglish) {
-        // Si ya está en inglés, reemplazar '/en/' con '/'
-        targetUrl = currentUrl.replace('/en/', '/');
+        // Si ya está en inglés, extraer el nombre de la página actual
+        var filename = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
+        
+        // Buscar el nombre de la página en inglés correspondiente en el mapeo inverso
+        var reverseFilename = fileMappingInverse[filename];
+        
+        if (reverseFilename) {
+            // Si se encuentra una correspondencia en el mapeo inverso, redirigir a la página en español
+            targetUrl = '/' + reverseFilename;
+        } else {
+            // Si no se encuentra una correspondencia, redirigir a la página principal en español
+            targetUrl = '/';
+        }
     } else {
-        // Si no está en inglés, agregar '/en' al inicio y ajustar el nombre del archivo
-        var filename = currentUrl.substring(currentUrl.lastIndexOf('/') + 1); // Obtener solo el nombre del archivo
-        var fileMapping = {
-            'index.html': 'index.html',
-            'legal.html': 'legal.html',
-            'contacto.html': 'contact.html',
-            'proyectos.html': 'projects.html'
-        };
-
-        var fileMappingInverse = {
-            'index.html': 'index.html',
-            'legal.html': 'legal.html',
-            'contact.html': 'contacto.html',
-            'projects.html': 'proyectos.html'
-        };
-
-        // Construir la URL en inglés
+        // Si la página actual está en español, agregar '/en/' al inicio de la URL
+        var filename = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
         var englishFilename = fileMapping[filename];
         if (englishFilename) {
+            // Si se encuentra una correspondencia en el mapeo, redirigir a la versión en inglés
             targetUrl = '/en/' + englishFilename;
-			if (targetUrl == fileMappingInverse[filename]) {
-				targetUrl = englishFilename;
-			}
         } else {
-            // Redirigir a la página de inicio en inglés si no se encuentra una correspondencia
+            // Si no se encuentra una correspondencia, redirigir a la página principal en inglés
             targetUrl = '/en/';
         }
-		
     }
 
     // Redirigir a la nueva URL
     window.location.href = targetUrl;
 });
-
