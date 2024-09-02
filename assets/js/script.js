@@ -4,8 +4,8 @@ const btnTheme = document.querySelector('.fa-moon')
 const btnHamburger = document.querySelector('.fa-bars')
 
 const addThemeClass = (bodyClass, btnClass) => {
-	body.classList.add(bodyClass)
-	btnTheme.classList.add(btnClass)
+  body.classList.add(bodyClass)
+  btnTheme.classList.add(btnClass)
 }
 
 const getBodyTheme = localStorage.getItem('portfolio-theme')
@@ -13,21 +13,21 @@ const getBtnTheme = localStorage.getItem('portfolio-btn-theme')
 
 addThemeClass(getBodyTheme, getBtnTheme)
 
-const isDark = () => body.classList.contains('body-dark')
+const isDark = () => body.classList.contains('dark-mode')
 
 const setTheme = (bodyClass, btnClass) => {
 
 	body.classList.remove(localStorage.getItem('portfolio-theme'))
 	btnTheme.classList.remove(localStorage.getItem('portfolio-btn-theme'))
 
-	addThemeClass(bodyClass, btnClass)
+  addThemeClass(bodyClass, btnClass)
 
 	localStorage.setItem('portfolio-theme', bodyClass)
 	localStorage.setItem('portfolio-btn-theme', btnClass)
 }
 
 const toggleTheme = () =>
-	isDark() ? setTheme('body-light', 'fa-moon') : setTheme('body-dark', 'fa-sun')
+	isDark() ? setTheme('light-mode', 'fa-moon') : setTheme('dark-mode', 'fa-sun')
 
 btnTheme.addEventListener('click', toggleTheme)
 
@@ -64,16 +64,17 @@ document.addEventListener('scroll', scrollUp)
 
 var fileMapping = {
     'index.html': 'index.html',
-    'legal.html': 'legal.html',
-    'contacto.html': 'contact.html',
-    'proyectos.html': 'projects.html'
+    'sobre-mi.html': 'about-me.html',
+    'proyectos.html': 'projects.html',
+    'educacion.html': 'education.html',
+    'contacto.html': 'contact.html'
 };
 
 var fileMappingInverse = {
     'index.html': 'index.html',
-    'legal.html': 'legal.html',
-    'contact.html': 'contacto.html',
-    'projects.html': 'proyectos.html'
+    'about-me.html': 'sobre-mi.html',
+    'projects.html': 'proyectos.html',
+    'contact.html': 'contacto.html'
 };
 
 /* Script para cambiar idioma de la web */

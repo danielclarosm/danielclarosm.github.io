@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Configuración del viewport para un diseño responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 , shrink-to-fit=yes">
+    <!-- Palabras clave para SEO -->
+    <meta name="keywords" content="data science, machine learning, data analysis, power bi, dashboard">
+    <!-- Descripción de la página para SEO -->
+    <meta name="description" content="Daniel Esteven Claros Montero, ML | AI | Python | R | SQL | Power BI">
+    <meta name="author" content="Daniel Claros">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon-512x512.png" />
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <script src="https://kit.fontawesome.com/7cfbb0e40b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <!-- Page CSS -->
+    <style>
+        .about-me,
+        .technologies-tools-container,
+        .skills-container,
+        .areas-interest-cotainer,
+        .personal-interests-container {
+            flex-direction: column;
+            margin-top: 5em;
+        }
+
+        .about-me-desc {
+            font-size: 1rem;
+            max-width: 900px;
+        }
+
+        /* carousel */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-250px * 8));
+            }
+        }
+
+        .slider {
+            background: var(--bg);
+            height: 100px;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+            width: 960px;
+        }
+
+        .slider::before,
+        .slider::after {
+            background: linear-gradient(to right, var(--bg) 0%, rgba(255, 255, 255, 0) 100%);
+            content: "";
+            height: 100px;
+            position: absolute;
+            width: 200px;
+            z-index: 2;
+        }
+
+        .slider::after {
+            right: 0;
+            top: 0;
+            transform: rotateZ(180deg);
+        }
+
+        .slider::before {
+            left: 0;
+            top: 0;
+        }
+
+        .slider .slide-track {
+            animation: scroll 10s linear infinite;
+            display: flex;
+            width: calc(250px * 16);
+        }
+
+        .slider .slide {
+            height: 100px;
+            width: 250px;
+        }
+
+        @media (max-width: 600px) {
+            .slider {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .slider {
+                width: 100%;
+            }
+        }
+
+        .skills-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .side {
+            max-width: 50%;
+            padding: 0 20px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .side {
+                max-width: 100%;
+            }
+
+            #soft-skills {
+                margin-top: 5em;
+            }
+
+        }
+
+        .stack-container {
+            margin: 0 auto;
+            display: flex;
+            gap: 1em;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn-plain-icon {
+            text-transform: initial;
+            width: 8em;
+            height: 4em;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--container-shadow-alt);
+            font-weight: 500;
+        }
+
+        .btn-plain-icon i {
+            font-size: 1.2rem;
+            margin-bottom: 0.2em;
+        }
+
+        .btn-plain-icon:hover {
+            transform: translateY(-4px);
+        }
+    </style>
+
+    <title>Daniel Claros</title>
+</head>
+
+<body class="light-mode" id="top">
+    <div class="page-container">
+        <div class="content-wrap">
+            <header class="header center">
+                <h3>
+                    <a href="/en" class="link">DC.</a>
+                </h3>
+                <nav class="center">
+                    <ul class="menu-list center">
+                        <li class="menu-item">
+                            <a class="link menu-link" href="/en">Home</a>
+                        </li>
+                        <li class="menu-item">
+                            <a class="link menu-link" href="about-me.html">About me</a>
+                        </li>
+                        <li class="menu-item">
+                            <a class="link menu-link" href="#projects.html">Projects</a>
+                        </li>
+                        <li class="menu-item">
+                            <a class="link menu-link" href="#education.html">Education</a>
+                        </li>
+                        <li class="menu-item">
+                            <a class="link menu-link" href="#contact.html">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="menu-list-buttons">
+                        <button type="button" id="language-toggle" class="btn btn-icon" aria-label="Change language">
+                            <i class="fas fa-language" aria-hidden="true"></i>
+                        </button>
+
+                        <button type="button" id="theme-toggle" class="btn btn-icon" aria-label="Toggle theme">
+                            <i class="fas fa-moon" aria-hidden="true"></i>
+                        </button>
+
+                        <button type="button" id="menu-toggle" class="btn btn-icon hamburger" aria-label="Open menu">
+                            <i class="fas fa-bars" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                </nav>
+            </header>
+
+            <main>
+                <!-- About -->
+                <section class="about-me center">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="about-me-desc">
+                        <strong>Hi, I am Daniel Claros.</strong> An Electronic Engineering student at the University of Engineering and Technology (UTEC), with a focus on <b>data science</b> and <b>information technology (IT)</b>. I have strong knowledge in <b>data analysis</b> and I am currently deepening my understanding of <b>machine learning</b>. Additionally, I have practical experience in the <b>installation</b> and <b>configuration</b> of <b>network devices</b>, as well as in using tools like <b>Python</b> and <b>SQL</b>. My goal is to combine my technical skills in engineering with other areas of interest to develop innovative solutions that drive multidisciplinary projects. I am committed to continuous learning and the development of advanced digital skills, always looking for opportunities to grow professionally and contribute to the success of organizations.
+                    </p>
+                </section>
+
+                <!-- Technologies and Tools -->
+                <section class="technologies-tools-container">
+                    <h3 class="section-title">Technologies and Tools</h3>
+                    <div class="slider">
+                        <div class="slide-track">
+                            <div class="slide">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg"
+                                    height="100" width="250" alt="" />
+                            </div>
+                            <div class="slide">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original-wordmark.svg"
+                                    height="100" width="250" alt="" />
+                            </div>
+                            <div class="slide">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"
+                                    height="100" width="250" alt="" />
+                            </div>
+                            <div class="slide">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg"
+                                    height="100" width="250" alt="" />
+                            </div>
+                            <div class="slide">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/latex/latex-original.svg"
+                                    height="100" width="250" alt="" />
+                            </div>
+                            <div class="slide">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original-wordmark.svg"
+                                    height="100" width="250" alt="" />
+                            </div>
+                            <div class="slide">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original-wordmark.svg"
+                                    height="100" width="250" alt="" />
+                            </div>
+                            <div class="slide">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matlab/matlab-original.svg"
+                                    height="100" width="250" alt="" />
+                            </div>
+                            <!-- Repet  -->
+                            <div class="slide">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg"
+                                    height="100" width="250" alt="" />
+                            </div>
+                            <div class="slide">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original-wordmark.svg"
+                                    height="100" width="250" alt="" />
+                            </div>
+                            <div class="slide">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"
+                                    height="100" width="250" alt="" />
+                            </div>
+                            <div class="slide">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg"
+                                    height="100" width="250" alt="" />
+                            </div>
+                            <div class="slide">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/latex/latex-original.svg"
+                                    height="100" width="250" alt="" />
+                            </div>
+                            <div class="slide">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original-wordmark.svg"
+                                    height="100" width="250" alt="" />
+                            </div>
+                            <div class="slide">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original-wordmark.svg"
+                                    height="100" width="250" alt="" />
+                            </div>
+                            <div class="slide">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matlab/matlab-original.svg"
+                                    height="100" width="250" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Skills -->
+                <section class="skills-container">
+                    <div class="skills-wrapper">
+                        <div class="side" id="technical-skills">
+                            <h3 class="section-title">Technical Skills</h3>
+                            <ul class="skills-list">
+                                <li class="skills-item btn btn-plain">Office Tools</li>
+                                <li class="skills-item btn btn-plain">Data Analysis</li>
+                                <li class="skills-item btn btn-plain">Programming</li>
+                                <li class="skills-item btn btn-plain">Software Proficiency</li>
+                                <li class="skills-item btn btn-plain">Basic Cybersecurity Knowledge</li>
+                                <li class="skills-item btn btn-plain">Electrical Principles</li>
+                            </ul>
+                        </div>
+                        <div class="side" id="soft-skills">
+                            <h3 class="section-title">Soft Skills</h3>
+                            <ul class="skills-list">
+                                <li class="skills-item btn btn-plain">Teamwork</li>
+                                <li class="skills-item btn btn-plain">Critical Thinking</li>
+                                <li class="skills-item btn btn-plain">Leadership</li>
+                                <li class="skills-item btn btn-plain">Adaptability</li>
+                                <li class="skills-item btn btn-plain">Creativity</li>
+                                <li class="skills-item btn btn-plain">Innovation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Areas of Interest -->
+                <section class="areas-interest-cotainer">
+                    <h3 class="section-title">Experience and Areas of Interest</h3>
+                    <ul class="skills-list">
+                        <li class="skills-item btn btn-plain">Nutrition</li>
+                        <li class="skills-item btn btn-plain">Databases</li>
+                        <li class="skills-item btn btn-plain">Brain-Computer Interfaces</li>
+                        <li class="skills-item btn btn-plain">Machine Learning</li>
+                        <li class="skills-item btn btn-plain">Electricity</li>
+                        <li class="skills-item btn btn-plain">Electronics</li>
+                    </ul>
+                </section>
+
+                <!-- Personal Interests -->
+                <div class="personal-interests-container">
+                    <h3 class="section-title">Personal Interests</h3>
+                    <div class="stack-container">
+                        <div class="btn btn-plain-icon">
+                            <i class="fas fa-headphones"></i>
+                            Music
+                        </div>
+                        <div class="btn btn-plain-icon">
+                            <i class="fas fa-mountain"></i>
+                            Traveling
+                        </div>
+                        <div class="btn btn-plain-icon">
+                            <i class="fas fa-dumbbell"></i>
+                            Gym
+                        </div>
+                        <div class="btn btn-plain-icon">
+                            <i class="fas fa-book"></i>
+                            Reading
+                        </div>
+                        <div class="btn btn-plain-icon">
+                            <i class="fas fa-drumstick-bite"></i>
+                            Cooking
+                        </div>
+                        <div class="btn btn-plain-icon">
+                            <i class="fas fa-running"></i>
+                            Running
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="footer">
+                <p>
+                    <a href="https://github.com/danielclarosm" class="link footer-link" aria-label="GitHub profile of Daniel Claros">
+                        Copyright &copy; 2024 Daniel Claros. All rights reserved.
+                    </a>
+                </p>
+            </footer>
+        </div>
+    </div>
+    <div class="scroll-container">
+        <div class="scroll-top">
+            <a href="#top" aria-label="Scroll up">
+                <i class="fas fa-arrow-up" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+
+    <script src="/assets/js/script.js"></script>
+</body>
+
+</html>
