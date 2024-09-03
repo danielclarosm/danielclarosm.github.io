@@ -43,7 +43,7 @@
                             <a class="link menu-link" href="about-me.html">About me</a>
                         </li>
                         <li class="menu-item">
-                            <a class="link menu-link" href="#projects.html">Projects</a>
+                            <a class="link menu-link" href="projects.html">Projects</a>
                         </li>
                         <li class="menu-item">
                             <a class="link menu-link" href="#education.html">Education</a>
@@ -123,6 +123,17 @@
                 </div>
 
                 <!-- Projects -->
+                <section id="projects" class="section projects">
+                    <h2 class="section-title">Projects</h2>
+                    <div class="projects-grid" id="proyectos-preview">
+                        <!-- Aquí se mostrarán los 3 primeros proyectos -->
+                    </div>
+                    <div class="projects-button center">
+                        <a href="proyectos.html" class="btn btn-outline" aria-label="Ver más proyectos">
+                            <span>See More</span>
+                        </a>
+                    </div>
+                </section>
 
                 <!-- Contact -->
                 <section id="contact" class="section contact center">
@@ -156,7 +167,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // URL de tu página de proyectos
-            const urlProyectos = "proyectos.html";
+            const urlProyectos = "projects.html";
 
             // Realizar una solicitud fetch para obtener el contenido de proyectos.html
             fetch(urlProyectos)
